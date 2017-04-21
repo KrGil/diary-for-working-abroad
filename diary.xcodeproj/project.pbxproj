@@ -15,6 +15,8 @@
 		2B64AC051E853CAC0032944F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B64AC031E853CAC0032944F /* LaunchScreen.storyboard */; };
 		2B64AC101E853CAD0032944F /* diaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64AC0F1E853CAD0032944F /* diaryTests.swift */; };
 		2B64AC1B1E853CAD0032944F /* diaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64AC1A1E853CAD0032944F /* diaryUITests.swift */; };
+		2B815F001E9F83F400F4078F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B815EFF1E9F83F400F4078F /* TableViewController.swift */; };
+		2B815F061EA609C400F4078F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B815F051EA609C400F4078F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		2B64AC161E853CAD0032944F /* diaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = diaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B64AC1A1E853CAD0032944F /* diaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diaryUITests.swift; sourceTree = "<group>"; };
 		2B64AC1C1E853CAD0032944F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B815EFF1E9F83F400F4078F /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		2B815F051EA609C400F4078F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				2B64AC031E853CAC0032944F /* LaunchScreen.storyboard */,
 				2B64AC061E853CAC0032944F /* Info.plist */,
 				2B64ABFE1E853CAC0032944F /* diary.xcdatamodeld */,
+				2B815EFF1E9F83F400F4078F /* TableViewController.swift */,
+				2B815F051EA609C400F4078F /* DetailViewController.swift */,
 			);
 			path = diary;
 			sourceTree = "<group>";
@@ -264,7 +270,9 @@
 			files = (
 				2B64AC001E853CAC0032944F /* diary.xcdatamodeld in Sources */,
 				2B64ABFA1E853CAC0032944F /* ViewController.swift in Sources */,
+				2B815F061EA609C400F4078F /* DetailViewController.swift in Sources */,
 				2B64ABF81E853CAC0032944F /* AppDelegate.swift in Sources */,
+				2B815F001E9F83F400F4078F /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +515,7 @@
 				2B64AC211E853CAD0032944F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B64AC221E853CAD0032944F /* Build configuration list for PBXNativeTarget "diaryTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +524,7 @@
 				2B64AC241E853CAD0032944F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2B64AC251E853CAD0032944F /* Build configuration list for PBXNativeTarget "diaryUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +533,7 @@
 				2B64AC271E853CAD0032944F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

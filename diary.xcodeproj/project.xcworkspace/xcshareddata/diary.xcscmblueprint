@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "867DA733623065BA495DEB5E5576D76D9E711CA7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DFF150669BF48BB59150014A9F43D7D61A77A2B4" : 9223372036854775807,
+    "867DA733623065BA495DEB5E5576D76D9E711CA7" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FFA47F09-2B7F-4CBC-95DA-A605EB5C783F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DFF150669BF48BB59150014A9F43D7D61A77A2B4" : "..",
+    "867DA733623065BA495DEB5E5576D76D9E711CA7" : "diary\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "diary",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "diary.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KrGil\/diary-for-working-abroad.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "867DA733623065BA495DEB5E5576D76D9E711CA7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KrGil\/diary-for-working-abroad",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DFF150669BF48BB59150014A9F43D7D61A77A2B4"
+    }
+  ]
+}

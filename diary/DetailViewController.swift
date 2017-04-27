@@ -18,6 +18,10 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.text = titleText
+        contentLabel.text = contentText
+        
 
         // Do any additional setup after loading the view.
     }

@@ -7,25 +7,28 @@
 //
 
 import UIKit
+import CoreData
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var contentList = [
-    
-        [
-            "title" : "this is the firs one",
-            "content": "hello"
-        ],
-        [
-            "title" : "this is the second one",
-            "content": "hello"
-        ],
-        [
-            "title" : "this is the third one",
-            "content": "hello"
-        ],
-    ]
+//    var contentList = [
+//    
+//        [
+//            "title" : "this is the firs one",
+//            "content": "hello"
+//        ],
+//        [
+//            "title" : "this is the second one",
+//            "content": "hello"
+//        ],
+//        [
+//            "title" : "this is the third one",
+//            "content": "hello"
+//        ],
+//    ]
 
+    var controller: NSFetchedResultsController<Article>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +37,8 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        fetchArticles()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,21 +50,49 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        if let sections = controller.sections {
+            return sections.count
+        }
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return contentList.count
+        if let sections = controller.sections {
+            let sectionInfo = sections[section]
+            return sectionInfo.numberOfObjects
+        }
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = contentList[indexPath.row]["title"]
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCell
+//        cell.textLabel?.text = contentList[indexPath.row]["title"]
+//        cell.cellLabel.text = contentList[indexPath.row]["title"]
+//        cell.cellImage.image = UIImage(named: "swift.jpg")
         // Configure the cell...
+        
+        let article = controller.object(at: indexPath)
+        cell.cellLabel.text = article.title
 
         return cell
+    }
+    
+    func fetchArticles () {
+        //TODO: should implement
+        let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
+        let dataSort = NSSortDescriptor(key: "createdAt", ascending: false)
+        fetchRequest.sortDescriptors = [dataSort]
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        self.controller = controller
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error)")
+            
+        }
     }
 
     /*
@@ -104,6 +137,16 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "detail" {
+            let detailViewController: DetailViewController = segue.destination as! DetailViewController
+//            let indexPath = tableView.indexPathForSelectedRow?.row
+            
+//            detailViewController.titleText = contentList[indexPath!]["title"]
+//            detailViewController.contentText = contentList[indexPath!]["content"]
+            let article = controller.object(at: tableView.indexPathForSelectedRow!)
+            detailViewController.titleText = article.title
+            detailViewController.contentText = article.content
+        }
     }
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B01F4821EB5E94700974182 /* revisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B01F4811EB5E94700974182 /* revisionViewController.swift */; };
 		2B64ABF81E853CAC0032944F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64ABF71E853CAC0032944F /* AppDelegate.swift */; };
 		2B64ABFA1E853CAC0032944F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B64ABF91E853CAC0032944F /* ViewController.swift */; };
 		2B64ABFD1E853CAC0032944F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B64ABFB1E853CAC0032944F /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B01F4811EB5E94700974182 /* revisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = revisionViewController.swift; sourceTree = "<group>"; };
 		2B64ABF41E853CAC0032944F /* diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B64ABF71E853CAC0032944F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B64ABF91E853CAC0032944F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				2BF94D5D1EB072F900141F6C /* Article+CoreDataClass.swift */,
 				2BF94D5E1EB072F900141F6C /* Article+CoreDataProperties.swift */,
+				2B815F0B1EAA02A600F4078F /* swift.jpg */,
 				2B64ABF71E853CAC0032944F /* AppDelegate.swift */,
 				2B64ABF91E853CAC0032944F /* ViewController.swift */,
 				2B64ABFB1E853CAC0032944F /* Main.storyboard */,
@@ -123,7 +126,7 @@
 				2B815EFF1E9F83F400F4078F /* TableViewController.swift */,
 				2B815F051EA609C400F4078F /* DetailViewController.swift */,
 				2B815F091EAA013F00F4078F /* TableViewCell.swift */,
-				2B815F0B1EAA02A600F4078F /* swift.jpg */,
+				2B01F4811EB5E94700974182 /* revisionViewController.swift */,
 			);
 			path = diary;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				2B64AC001E853CAC0032944F /* diary.xcdatamodeld in Sources */,
 				2B64ABFA1E853CAC0032944F /* ViewController.swift in Sources */,
+				2B01F4821EB5E94700974182 /* revisionViewController.swift in Sources */,
 				2BF94D5F1EB072F900141F6C /* Article+CoreDataClass.swift in Sources */,
 				2B815F061EA609C400F4078F /* DetailViewController.swift in Sources */,
 				2BF94D601EB072F900141F6C /* Article+CoreDataProperties.swift in Sources */,

@@ -1,33 +1,27 @@
 //
-//  DetailViewController.swift
+//  revisionViewController.swift
 //  diary
 //
-//  Created by Chang ByoungGil on 2017. 4. 18..
+//  Created by Chang ByoungGil on 2017. 4. 30..
 //  Copyright © 2017년 Gil. All rights reserved.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class revisionViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var willRiviseTitle: UITextField!
+        
     
-//    var titleText: String?
-//    var contentText: String?
-
-    var article:Article?
+    @IBOutlet weak var willRiviseContent: UITextView!
+    
+    var article : Article?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        titleLabel.text = titleText
-//        contentLabel.text = contentText
-        
-        titleLabel.text = article?.title
-        contentLabel.text = article?.content
-        
-        
+        willRiviseTitle.text = article?.title
+        willRiviseContent.text = article?.content
 
         // Do any additional setup after loading the view.
     }
@@ -36,13 +30,10 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func deleteButtonPressed(_ sender: Any) {
-        context.delete(article!)
-        appDelegate.saveContext()
-        navigationController?.popViewController(animated: true)
-
+    @IBAction func rivisionButtonPressed(_ sender: Any) {
+        
     }
+    
 
     /*
     // MARK: - Navigation

@@ -73,7 +73,8 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         // Configure the cell...
         
         let article = controller.object(at: indexPath)
-        cell.cellLabel.text = article.title
+//        cell.cellLabel.text = article.title
+        cell.textLabel?.text = article.title
 
         return cell
     }
@@ -85,15 +86,47 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         fetchRequest.sortDescriptors = [dataSort]
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         self.controller = controller
+        self.controller.delegate = self
         
         do {
             try controller.performFetch()
         } catch {
             let error = error as NSError
             print("\(error)")
-            
         }
     }
+    // 시뮬레이터에서 데이터 변경 시 바로 반영하게끔.
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    // 데이터 추가 시에 insertRows를 적용시켜라.
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch (type) {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        case .delete:
+            if let indexPath = indexPath{
+                tableView.deleteRows(at: [indexPath], with: .fade)
+        
+            }
+        default:
+            break
+        }
+        
+//        if type == NSFetchedResultsChangeType.insert {
+//            if let indexPath = newIndexPath {
+//                tableView.insertRows(at: [indexPath], with: .fade)
+//            }
+//        }
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -144,8 +177,9 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
 //            detailViewController.titleText = contentList[indexPath!]["title"]
 //            detailViewController.contentText = contentList[indexPath!]["content"]
             let article = controller.object(at: tableView.indexPathForSelectedRow!)
-            detailViewController.titleText = article.title
-            detailViewController.contentText = article.content
+//            detailViewController.titleText = article.title
+//            detailViewController.contentText = article.content
+            detailViewController.article = article
         }
     }
 
